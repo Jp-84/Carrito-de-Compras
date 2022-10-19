@@ -65,7 +65,7 @@ function leerDatosCurso(curso) {
     const existe = articulosCarrito.some(curso => curso.id === infoCurso.id)
     if (existe) {
         //Actualizar la cantidad
-        const curso = articulosCarrito.map(curso =>{
+        const cursos = articulosCarrito.map(curso =>{
             if (curso.id === infoCurso.id) {
                 curso.cantidad ++;
                 return curso;   // retorna el objeto actualizado
@@ -73,13 +73,13 @@ function leerDatosCurso(curso) {
                 return curso;   // retorna los objetos que no son dublicados
             }
         });
-        articulosCarrito = [...curso];
+        articulosCarrito = [...cursos];
     } else{
         // Agregar elementos al arreglo de carrito
         articulosCarrito = [...articulosCarrito, infoCurso];
     }
 
-    console.log(articulosCarrito);
+    // console.log(articulosCarrito);
 
     carritoHTML();
 }
